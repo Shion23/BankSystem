@@ -10,21 +10,21 @@ import android.widget.Toast;
 import com.example.bankaccsystem.R;
 
 public class LoginActivity extends Activity {
-    private EditText usernameField;
-    private EditText passwordField;
+    private EditText uname;
+    private EditText pword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        usernameField = (EditText) findViewById(R.id.username);
-        passwordField = (EditText) findViewById(R.id.password);
+        uname = (EditText) findViewById(R.id.username);
+        pword = (EditText) findViewById(R.id.password);
     }
 
     public void login(View view) {
-        String username = usernameField.getText().toString();
-        String password = passwordField.getText().toString();
+        String username = uname.getText().toString();
+        String password = pword.getText().toString();
 
         if (username.equals("YS") && password.equals("1234")) {
             // Successfully logged in

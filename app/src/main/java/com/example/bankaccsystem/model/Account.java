@@ -20,18 +20,22 @@ public abstract class Account {
     public abstract boolean withdraw(double amount);
 
     public int getAccountId() {
+
         return accountId;
     }
 
     public double getBalance() {
+
         return balance;
     }
 
     public double getInterestRate() {
+
         return interestRate;
     }
 
     public String getInterestPeriod() {
+
         return interestPeriod;
     }
 }

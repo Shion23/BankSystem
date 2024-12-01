@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText etAmount;
+    private EditText Amount;
     private TextView tvAccountDetails, tvTransactionLog;
     private BankAccount checkingAccount, savingsAccount;
 
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etAmount = findViewById(R.id.etAmount);
+        Amount = findViewById(R.id.Amount);
         Button btnDeposit = findViewById(R.id.btnDeposit);
         Button btnWithdraw = findViewById(R.id.btnWithdraw);
         Button btnTransfer = findViewById(R.id.btnTransfer);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void doDeposit() {
         try {
-            double amount = Double.parseDouble(etAmount.getText().toString());
+            double amount = Double.parseDouble(Amount.getText().toString());
             checkingAccount.deposit(amount);
             update();
         } catch (NumberFormatException e) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void doWithdrawal() {
         try {
-            double amount = Double.parseDouble(etAmount.getText().toString());
+            double amount = Double.parseDouble(Amount.getText().toString());
             if (!checkingAccount.withdraw(amount)) {
                 Toast.makeText(this, "mainInsufficient funds", Toast.LENGTH_SHORT).show();
             }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void doTransfer() {
         try {
-            double amount = Double.parseDouble(etAmount.getText().toString());
+            double amount = Double.parseDouble(Amount.getText().toString());
             if (!checkingAccount.transfer(savingsAccount, amount)) {
                 Toast.makeText(this, "Transfer failed", Toast.LENGTH_SHORT).show();
             }
