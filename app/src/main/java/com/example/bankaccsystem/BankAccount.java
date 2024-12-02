@@ -15,7 +15,7 @@ public abstract class BankAccount {
     private String accountId;
 
 
-    //constructoe
+    //constructor
     public BankAccount(String accountHolder, double initialBalance, String accountId) {
         this.accountHolder = accountHolder;
         this.balance = initialBalance;
